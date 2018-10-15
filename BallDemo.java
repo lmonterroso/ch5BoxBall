@@ -12,7 +12,7 @@ import java.awt.Dimension;
  * @version 2011.07.31
  * 
  * @author Luis Monterroso
- * @version 2018-October-14
+ * @version 2018-October-14 Extra Credit
  */
 
 public class BallDemo   

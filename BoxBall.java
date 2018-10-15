@@ -7,7 +7,7 @@ import java.awt.Dimension;
  * Write a description of class BoxBall here.
  *
  * @author Luis Monterroso
- * @version 10/15/18 
+ * @version 10/15/18 Extra Credit
  */
 public class BoxBall
 {
