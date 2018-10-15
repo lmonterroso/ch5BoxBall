@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.geom.*;
 import java.util.Random;
+import java.awt.Dimension;
 
 /**
  * Write a description of class BoxBall here.
@@ -17,6 +18,7 @@ public class BoxBall
     private int yPosition;     
     private Canvas canvas;   
     private Random rand = new Random();
+    private Dimension dim = new Dimension();
     
     /*
      * The yvelocity is calculated with a random number between 1 and 6,
@@ -42,10 +44,12 @@ public class BoxBall
                     Canvas drawingCanvas, int length, int height)
     {
         //the four walls are calculated by taking the center of the canvas and adding or subtracting half the length or height
-        ground = 250 + height/2;
-        ceiling = 250 - height/2;
-        leftWall = 300 - length/2;
-        rightWall = 300 + length/2;
+        canvas = drawingCanvas;
+        dim = drawingCanvas.getSize();
+        ground = (int)dim.getHeight() - 50;
+        ceiling = 50;
+        leftWall = 50;
+        rightWall =(int)dim.getWidth() - 50;
         
         diameter = ballDiameter;
         
@@ -54,7 +58,6 @@ public class BoxBall
         xPosition = rand.nextInt((rightWall - leftWall) - diameter) + leftWall;
         yPosition = rand.nextInt(ground - ceiling - diameter) + ceiling;
         color = ballColor;
-        canvas = drawingCanvas;
     }
     
     /**

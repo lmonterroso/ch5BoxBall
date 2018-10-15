@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.util.Random;
+import java.awt.Dimension;
 /**
  * Class BallDemo - a short demonstration showing animation with the 
  * Canvas class. 
@@ -23,7 +24,7 @@ public class BallDemo
      */
     public BallDemo()
     {
-        myCanvas = new Canvas("Ball Demo", 600, 500);
+        myCanvas = new Canvas("Ball Demo", 800, 600);
     }
 
     /**
@@ -63,13 +64,15 @@ public class BallDemo
      * @param height sets the height of the box in pixels
      * @param length sets the length of the box in pixels 
      */
-    public void boxBounce(int balls, int height, int length)
+    public void boxBounce(int balls)
     {
         //Random color is used to create random colors for the balls
         Random color = new Random();
+        Random size = new Random();
+        Dimension dim = myCanvas.getSize();
         
         //ball1 is used to draw the box, originally I had the walls drawn straight from this method but I implemented it into BoxBall 
-        BoxBall ball1 = new BoxBall(16, Color.BLUE, myCanvas, length, height);
+        BoxBall ball1 = new BoxBall(16, Color.BLUE, myCanvas, (int)dim.getWidth() - 50, (int)dim.getHeight() - 50);
         
         //The array is used to organize all the balls and make it easy to perform operations on every ball
         BoxBall[] Balls = new BoxBall[balls];
@@ -81,18 +84,16 @@ public class BallDemo
             //generates a random color for the ball, limited to 215 to make the balls more visible.
             Color newColor = new Color(color.nextInt(215),color.nextInt(215),color.nextInt(215));
             
-            Balls[i] = new BoxBall(16, newColor, myCanvas, length, height);
+            Balls[i] = new BoxBall(size.nextInt(16) + 10, newColor, myCanvas,(int)dim.getWidth() - 50, (int)dim.getHeight() - 50);
             Balls[i].draw();
         }
         boolean finished =  false; 
-        while(!finished) {
+        while(!finished) { // finished is never true making the simulation run as long as you want
             myCanvas.wait(25);           // small delay
             for (BoxBall ball: Balls) 
             {
                 ball.move(); 
             }
-            if(ball1.getXPosition() >= 550) //finished is always true so the simulation won't end
-                finished = true;
         }
         
         
