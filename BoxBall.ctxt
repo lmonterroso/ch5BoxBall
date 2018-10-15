@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=BoxBall
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BoxBall\ here.\r\n\r\n\ @author\ Luis\ Monterroso\r\n\ @version\ 10/15/18\ \r\n
+comment1.params=ballDiameter\ ballColor\ drawingCanvas\ length\ height
+comment1.target=BoxBall(int,\ java.awt.Color,\ Canvas,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ BoxBall\r\n\ @param\ ballDiameter\ \ the\ diameter\ of\ the\ ball\ in\ pixels;\r\n\ @param\ ballColor\ \ the\ color\ of\ the\ ball\r\n\ @param\ drawingCanvas\ \ the\ canvas\ to\ draw\ this\ ball\ on\r\n\ @param\ length\ the\ length\ of\ your\ box\ in\ pixels\r\n\ @param\ height\ the\ height\ of\ your\ box\ in\ pixels\r\n
+comment2.params=
+comment2.target=int\ getXPosition()
+comment2.text=\r\n\ return\ the\ horizontal\ position\ of\ this\ ball\r\n
+comment3.params=
+comment3.target=void\ drawBox()
+comment3.text=\r\n\ Draws\ the\ walls\ of\ the\ box.\r\n
+comment4.params=
+comment4.target=void\ draw()
+comment4.text=\r\n\ draws\ the\ circle\ at\ its\ x\ and\ y\ position;\r\n
+comment5.params=
+comment5.target=void\ erase()
+comment5.text=\r\n\ Erase\ this\ ball\ at\ its\ current\ position.\r\n
+comment6.params=
+comment6.target=void\ move()
+comment6.text=\r\n\ moves\ the\ circle\ and\ redraws\ the\ circle\ at\ its\ new\ position,\ if\ the\ circle\ hits\r\n\ a\ wall\ it\ will\ rebound\ in\ the\ opposite\ direction.\r\n
+numComments=7
