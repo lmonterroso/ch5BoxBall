@@ -128,4 +128,13 @@ public class BoxBall
         }
         draw();
     }
+    public void collision(BoxBall collision)
+    {
+        if ((this.xPosition <= collision.xPosition + collision.diameter ||
+            this.yPosition <= collision.xPosition + collision.diameter)
+            && this != collision){
+        xvelocity = -1 * (rand.nextInt(7) + 1);
+        move();
+    }
+    }
 }

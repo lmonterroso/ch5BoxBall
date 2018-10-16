@@ -92,10 +92,16 @@ public class BallDemo
             myCanvas.wait(25);           // small delay
             for (BoxBall ball: Balls) 
             {
-                ball.move(); 
+                for (int n = 0; n < Balls.length; n++)
+                {
+                    ball.collision(Balls[n]);
+                }
+                ball.move();
             }
         }
         
         
     }
+    
+    
 }

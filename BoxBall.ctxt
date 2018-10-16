@@ -19,4 +19,6 @@ comment5.text=\r\n\ Erase\ this\ ball\ at\ its\ current\ position.\r\n
 comment6.params=
 comment6.target=void\ move()
 comment6.text=\r\n\ moves\ the\ circle\ and\ redraws\ the\ circle\ at\ its\ new\ position,\ if\ the\ circle\ hits\r\n\ a\ wall\ it\ will\ rebound\ in\ the\ opposite\ direction.\r\n
-numComments=7
+comment7.params=collision
+comment7.target=void\ collision(BoxBall)
+numComments=8
