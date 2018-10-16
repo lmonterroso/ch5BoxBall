@@ -61,6 +61,33 @@ public class BoxBall
     }
     
     /**
+     * Constructor for objects of class BoxBall
+     * @param ballDiameter  the diameter of the ball in pixels;
+     * @param ballColor  the color of the ball
+     * @param drawingCanvas  the canvas to draw this ball on
+     * @param length the length of your box in pixels
+     * @param height the height of your box in pixels
+     */
+    public BoxBall(int xPos, int yPos, int ballDiameter, Color ballColor,
+                    Canvas drawingCanvas, int length, int height)
+    {
+        //the four walls are calculated by taking the center of the canvas and adding or subtracting half the length or height
+        canvas = drawingCanvas;
+        dim = drawingCanvas.getSize();
+        ground = (int)dim.getHeight() - 50;
+        ceiling = 50;
+        leftWall = 50;
+        rightWall =(int)dim.getWidth() - 50;
+        
+        diameter = ballDiameter;
+        
+        // x and y positions are calculated randomly by taking the values between the walls minus
+        // the diameter to prevent them from spawning on the walls of the box.
+        xPosition = xPos;
+        yPosition = yPos;
+        color = ballColor;
+    }
+    /**
      * return the horizontal position of this ball
      */
     public int getXPosition()
@@ -130,8 +157,8 @@ public class BoxBall
     }
     public void collision(BoxBall collision)
     {
-        if ((this.xPosition <= collision.xPosition + collision.diameter ||
-            this.yPosition <= collision.xPosition + collision.diameter)
+        if ((this.xPosition - collision.xPosition <= collision.diameter ||
+            this.yPosition - collision.xPosition <= collision.diameter)
             && this != collision){
         xvelocity = -1 * (rand.nextInt(7) + 1);
         move();

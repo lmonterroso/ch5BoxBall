@@ -72,7 +72,7 @@ public class BallDemo
         Dimension dim = myCanvas.getSize();
         
         //ball1 is used to draw the box, originally I had the walls drawn straight from this method but I implemented it into BoxBall 
-        BoxBall ball1 = new BoxBall(16, Color.BLUE, myCanvas, (int)dim.getWidth() - 50, (int)dim.getHeight() - 50);
+        BoxBall ball1 = new BoxBall(1000000, 1000000, 16, Color.BLUE, myCanvas, (int)dim.getWidth() - 50, (int)dim.getHeight() - 50);
         
         //The array is used to organize all the balls and make it easy to perform operations on every ball
         BoxBall[] Balls = new BoxBall[balls];
@@ -92,12 +92,12 @@ public class BallDemo
             myCanvas.wait(25);           // small delay
             for (BoxBall ball: Balls) 
             {
-                for (int n = 0; n < Balls.length; n++)
+                ball.move();
+                /*for (int n = 0; n < Balls.length; n++)
                 {
                     ball.collision(Balls[n]);
                 }
-                ball.move();
-            }
+            */}
         }
         
         
