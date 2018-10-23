@@ -157,11 +157,19 @@ public class BoxBall
     }
     public void collision(BoxBall collision)
     {
-        if ((this.xPosition - collision.xPosition <= collision.diameter ||
-            this.yPosition - collision.xPosition <= collision.diameter)
-            && this != collision){
-        xvelocity = -1 * (rand.nextInt(7) + 1);
-        move();
-    }
+        if (this != collision)
+        {  
+            int x = (this.xPosition + this.diameter/2 - collision.xPosition + collision.diameter/2);
+            int y = (this.yPosition + this.diameter/2 - collision.yPosition + collision.diameter/2);
+            int hypotenuse = (int)Math.sqrt(x*x + y*y);
+        
+        
+            if ((this.diameter/2 + collision.diameter/2) >= hypotenuse){
+                this.xvelocity *= -1;
+                this.yvelocity *= -1;
+                this.move();
+                
+            }
+        }
     }
 }

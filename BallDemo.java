@@ -90,14 +90,15 @@ public class BallDemo
         boolean finished =  false; 
         while(!finished) { // finished is never true making the simulation run as long as you want
             myCanvas.wait(25);           // small delay
-            for (BoxBall ball: Balls) 
+            for (int n = 0; n < Balls.length; n++) 
             {
-                ball.move();
-                /*for (int n = 0; n < Balls.length; n++)
+                Balls[n].move();
+                for (int i = n + 1; i < Balls.length; i++)
                 {
-                    ball.collision(Balls[n]);
+                    Balls[n].collision(Balls[i]);
                 }
-            */}
+                
+            }
         }
         
         
